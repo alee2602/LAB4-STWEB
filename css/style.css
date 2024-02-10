@@ -1,0 +1,352 @@
+/* Configuración del html y body*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+}
+
+/* Fondo de la ventana */
+body{
+    background-color: #070021;
+}
+
+/* Contenedor */
+.container {
+    max-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estrella */
+.star {
+    position: fixed; 
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    opacity: 0;
+    animation: twinkle 2s infinite ease-in-out;
+    top: 30%;
+}
+
+/* Añade más estrellas en en fondo con un retraso de +0.5 s */
+.star:nth-child(1) {
+    top: 8%;
+    left: 22%;
+    animation-delay: 0.5s;
+}
+
+.star:nth-child(2) {
+    top: 16%;
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.star:nth-child(3) {
+    top: 88%;
+    left: 33%;
+    animation-delay: 1.5s;
+}
+
+.star:nth-child(4) { 
+    top: 57%; 
+    right: 12%; 
+    animation-delay: 2s; 
+}
+
+.star:nth-child(5) { 
+    top: 29%; 
+    left: 95%; 
+    animation-delay: 2.5s; 
+}
+
+.star:nth-child(6) { 
+    top: 44%; 
+    left: 68%; 
+    animation-delay: 3s; 
+}
+
+.star:nth-child(7) { 
+    top: 92%; 
+    left: 59%; 
+    animation-delay: 3.5s; 
+}
+
+.star:nth-child(8) { 
+    top: 53%; 
+    right: 85%; 
+    animation-delay: 4s; 
+}
+
+.star:nth-child(9) { 
+    top: 89%; 
+    left: 5%; 
+    animation-delay: 4.5s; 
+}
+
+.star:nth-child(10) { 
+    top: 55%; 
+    left: 30%; 
+    animation-delay: 5s; 
+}
+
+.star:nth-child(11) {
+    top: 34%;
+    left: 8%;
+    animation-delay: 5.5s;
+}
+
+.star:nth-child(12) { 
+    top: 89%; 
+    right: 5%; 
+    animation-delay: 6s; 
+}
+
+.star:nth-child(13) {
+    bottom: 76%;
+    left: 42%;
+    animation-delay: 6.5s;
+}
+
+.star:nth-child(14) {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 7s;
+}
+
+.star:nth-child(15) {
+    top: 82%;
+    left: 75%;
+    transform: translateX(50%);
+    animation-delay: 8s;
+}
+
+/* Animacion de las estrellas */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Personaje */
+.kirby{
+    width: 390px;
+    height: 610px;
+    position: relative;
+}
+
+/* Animación del personaje */
+.kirby:hover{
+    animation: pulse 2s ease-in-out;
+    position: relative;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Cara */
+.face {
+    background: #FAAEC1;
+    border-radius: 50%;
+    width: 325px; 
+    height: 325px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transform: translateY(200px);
+    border-bottom: 20px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0s ;
+}
+
+/* Cambia el color de la cara */
+.kirby:hover .face {
+    background-color: #F988BE; 
+}
+
+/* Ojos */
+.eye {
+    background: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative; 
+}
+
+/* Pupila */
+.eye::before {
+    content: "";
+    background: white;
+    border-radius: 50%;
+    width: 18px; 
+    height: 40px; 
+    align-self: center;
+    margin: 5px 4px 1px 8px;
+}
+
+/* Reflejo del ojo */
+.eye::after {
+    content: "";
+    background: #305EF5;
+    clip-path: polygon(70% 32%, 53% 38%, 38% 36%, 25% 29%, 17% 18%, 15% 43%, 19% 75%, 25% 90%, 37% 97%, 67% 99%, 76% 89%, 84% 74%, 87% 40%, 82% 16%);
+    transform: translateX(-1px) translateY(-1px) rotate(10deg);
+    width: 21px; 
+    height: 25px;  
+    align-self: center;
+    margin: 15px 4px 0px auto;
+}
+
+/* Cambia de color el reflejo del ojo */
+.kirby:hover .eye::after {
+    background-color: #0B0396; 
+}
+
+/* Ojo izquierdo*/
+.left-eye {
+    transform: translateX(60px) translateY(-60px) rotate(20deg); 
+}
+
+/* Ojo derecho */
+.right-eye {
+    transform: translateX(115px) translateY(-110px) rotate(20deg);
+}
+
+/* Mejillas */
+.cheek {
+    background: #F988BE;
+    width: 50px; 
+    height: 20px; 
+    border-radius: 50%;
+    position: relative; 
+}
+
+/* Camibia el color de las mejillas */
+.kirby:hover .cheek {
+    background-color: #DD2875; 
+}
+
+/* Mejilla izquierda */
+.left-cheek {
+    transform: translateX(-90px) translateY(-55px) rotate(20deg);
+}
+
+/* Mejilla derecha */
+.right-cheek {
+    transform: translateX(51px) translateY(-22px) rotate(20deg);
+}
+
+/* Boca */
+.mouth {
+    background: #772020;
+    width: 50px;
+    height: 40px;
+    border-radius: 54% 46% 57% 43% / 66% 77% 23% 34%;
+    position: relative; 
+    top: 10px; 
+    transform:  translateX(26px) translateY(-30px) rotate(200deg); 
+}
+
+/* Cambia el color de la boca */
+.kirby:hover .mouth {
+    background-color: black; 
+}
+
+/* Lengua */
+.tongue {
+    background: #F76660; 
+    width: 42px; 
+    height: 23px; 
+    border-radius: 54% 46% 57% 43% / 66% 77% 23% 34%;
+    position: relative; 
+    bottom: -5px; 
+    left: 50%; 
+    transform: translateX(-20px) translateY(-5px) rotate(1deg); 
+}
+
+/* Cambia el color de la lengua */
+.kirby:hover .tongue {
+    background-color: #E43746; 
+}
+
+/* Brazos */
+.arm {
+    background: #FAAEC1; 
+    border-radius: 80%; 
+}
+
+/* Cambia el color de los brazos */
+.kirby:hover .arm {
+    background-color: #F988BE; 
+}
+
+/* Brazo izquierdo */
+.left-arm {
+    z-index: 1;
+    width: 105px; 
+    height: 170px; 
+    transform: translateX(50px) translateY(-210px) rotate(200deg);
+}
+
+/* Brazo derecho */
+.right-arm {
+    width: 90px; 
+    height: 215px; 
+    transform:  translateX(230px) translateY(-250px) rotate(460deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Pies */
+.foot {
+    background: #D34D5D;
+    border-radius: 80%; 
+    position: relative;
+    border-top: 8px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Cambia el color de los pies */
+.kirby:hover .foot {
+    background-color: #C80013; 
+}
+
+/* Pie izquierdo */
+.left-foot {
+    width: 110px;
+    height: 175px;
+    transform:  translateX(20px)translateY(-300px) rotate(-205deg);
+    z-index: 1;
+}
+
+/* Pie derecho */
+.right-foot {
+    width: 140px;
+    height: 185px;
+    transform:  translateX(205px) translateY(-540px) rotate(-295deg);
+    z-index: 2;
+    border-right: 15px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Realiza la transición de los colores */
+.face, .cheek, .eye, .mouth, .arm, .foot {
+    transition: background-color 0.8s ease; /* */
+}
