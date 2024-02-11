@@ -2,7 +2,6 @@
     Mónica Salvatierra - 22249
 */
 
-
 /* Configuración del html y body*/
 html, body {
     height: 100%;
@@ -353,5 +352,5 @@ body{
 
 /* Realiza la transición de los colores */
 .face, .cheek, .eye, .mouth, .arm, .foot {
-    transition: background-color 0.8s ease; /* */
+    transition: background-color 2s ease-out; 
 }
